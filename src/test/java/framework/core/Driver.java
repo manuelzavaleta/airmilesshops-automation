@@ -17,10 +17,19 @@ public class Driver {
     }
 
     public static WebDriver getDriver() {
-        if (driver == null) {
+        if (!hasSession()) {
             setupDriver();
         }
-
         return driver;
+    }
+
+    public static void quit() {
+        if (hasSession()) {
+            driver.quit();
+        }
+    }
+
+    private static boolean hasSession() {
+        return driver != null && !driver.toString().contains("(null)");
     }
 }
