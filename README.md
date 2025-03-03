@@ -26,3 +26,28 @@ I am aware of some decisions I've made in the code that may not be optimal, so I
 
 - **Adherence to Step Definitions**  
   I tried to adhere as closely as possible to the step definitions as they were written. I had to change some wording to make sense in the Given-When-Then context. Additionally, I changed some "clicks on" actions to "hovers on" because, in a manual test, it made no sense to do that. Therefore, I've changed it to make it more from a "user point of view."
+
+# Build and Test Instructions
+
+## Build the Project
+
+Use the Gradle Wrapper to build the project. This will download all necessary dependencies:
+```
+./gradlew build
+```
+
+On Windows, use:
+```
+gradlew.bat build
+```
+
+## Running Tests
+To execute a specific test class, use the following command:
+```
+./gradlew test --tests "framework.core.TestRunner"
+```
+
+On Windows, use:
+```
+gradlew.bat test --tests "framework.core.TestRunner"
+```
